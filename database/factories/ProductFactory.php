@@ -25,7 +25,7 @@ class ProductFactory extends Factory
         return [
             //
             'name' => $this->faker->word(),
-            'description' => $this->faker->text(180),
+            'description' => $this->faker->text(150),
             'price' => $this->faker->numberBetween(50, 100),
         ];
     }
