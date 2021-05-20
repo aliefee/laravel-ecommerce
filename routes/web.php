@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Livewire\Admin\Board;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,4 @@ Route::get('/product/{product}', [ProductController::class, 'show']);
 
 
 
-Route::get('/administration', function () {
-	return view('admin/admin-page');
-});
+Route::get('/administration', Board::class);
