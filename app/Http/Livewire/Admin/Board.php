@@ -37,6 +37,7 @@ class Board extends Component
         $this->name = '';
         $this->price = '';
         $this->description = '';
+        $this->product_id = 0;
     }
     
     public function store()
@@ -63,6 +64,7 @@ class Board extends Component
     {
         $product = Product::findOrFail($id);
         $this->id = $id;
+        $this->product_id = $id;
         $this->name = $product->name;
         $this->price = $product->price;
         $this->description = $product->description;
