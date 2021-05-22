@@ -55,7 +55,7 @@ class Board extends Component
         ]);
 
         if ($this->photo != null) {
-            $image = $this->photo->store('upload');
+            $image = "storage/".substr($this->photo->store('public/products'), 7);
         } elseif ($this->image != '') {
             $image = $this->image;
         } else {

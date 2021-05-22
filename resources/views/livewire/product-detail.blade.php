@@ -5,7 +5,7 @@
 	<div class="container mx-auto px-6">
 	    <div class="md:flex md:items-center">
 	        <div class="w-full h-64 md:w-1/2 lg:h-96">
-	            <img class="h-full w-full rounded-md object-cover max-w-lg mx-auto" src="/storage/product-default.png" alt="Item Image">
+	            <img class="h-full w-full rounded-md object-cover max-w-lg mx-auto" src="{{ '/'.$product->image }}" alt="Item Image">
 	        </div>
 	        <div class="w-full max-w-lg mx-auto mt-5 md:ml-8 md:mt-0 md:w-1/2">
 	            <h3 class="text-gray-700 uppercase text-lg">{{ $product->name ?? '' }}</h3>
