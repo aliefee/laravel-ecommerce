@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire\Admin;
 
+use Livewire\WithFileUploads;
 use Livewire\Component;
 use App\Models\Product;
 
 class Board extends Component
 {
-
+    use WithFileUploads;
+    public $image, $photo;
 	public $products, $name, $price, $description, $product_id;
     public $isModalOpen = 0;
 
@@ -38,6 +40,9 @@ class Board extends Component
         $this->price = '';
         $this->description = '';
         $this->product_id = 0;
+        $this->image = '';
+        $this->photo = null;
+        #$this->reset();
     }
     
     public function store()
@@ -46,12 +51,22 @@ class Board extends Component
             'name' => 'required',
             'price' => 'required',
             'description' => 'required',
+            'photo' => 'nullable|image|max:1024',
         ]);
-    
+
+        if ($this->photo != null) {
+            $image = $this->photo->store('upload');
+        } elseif ($this->image != '') {
+            $image = $this->image;
+        } else {
+            $image = 'storage/products/product-default.png';
+        }
+
         Product::updateOrCreate(['id' => $this->product_id], [
             'name' => $this->name,
             'price' => $this->price,
             'description' => $this->description,
+            'image' => $image,
         ]);
 
         session()->flash('message', $this->product_id ? 'Product updated.' : 'Product created.');
@@ -68,7 +83,8 @@ class Board extends Component
         $this->name = $product->name;
         $this->price = $product->price;
         $this->description = $product->description;
-    
+        $this->image = $product->image;
+
         $this->openModalPopover();
     }
     

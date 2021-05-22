@@ -34,7 +34,16 @@
                                 id="exampleFormControlInput2" wire:model="description"
                                 placeholder=""></textarea>
                             @error('description') <span class="text-red-500">{{ $message }}</span>@enderror
-                        </div>                        
+                        </div>    
+                        <div class="mb-4">
+                            <label for="exampleFormControlInput2"
+                                class="block text-gray-700 text-sm font-bold mb-2">Image</label>
+                            <img class="object-left object-contain h-20 rounded-md " src="{{ $image ?? '' }}" alt="Item Image">
+
+                            <input type="file" wire:model="photo">
+                            <div wire:loading wire:target="photo">Uploading...</div>
+                            @error('photo') <span class="text-red-500">{{ $message }}</span>@enderror
+                        </div>                    
                     </div>
                 </div>
                 <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">

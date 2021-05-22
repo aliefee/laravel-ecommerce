@@ -34,7 +34,7 @@
 	                </tr>
 	                @foreach($products as $product)
 	                	<tr class="border-b hover:bg-orange-100 bg-gray-100">
-		                	<td class="p-3"><img class="object-left object-contain h-20 rounded-md " src="/storage/product-default.png" alt="Item Image"></td>
+		                	<td class="p-3"><img class="object-left object-contain h-20 rounded-md " src="{{ $product->image }}" alt="Item Image"></td>
 		                    <td class="p-3 px-5"><input type="text" value="{{ $product->name }}" class="bg-transparent"></td>
 		                    <td class="p-3 px-5"><input type="text" value="{{ $product->price }}" class="bg-transparent"></td>
 		                    <td class="p-3 px-5">
