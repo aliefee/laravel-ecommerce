@@ -8,3 +8,11 @@
 </p>
 
 # laravel-ecommerce
+
+### Requirements
+-Laravel 8
+-Tailwindcss
+
+
+
+### Installation

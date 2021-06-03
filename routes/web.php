@@ -22,6 +22,9 @@ Route::get('/', function () {
 Route::get('/product/{product}', [ProductController::class, 'show']);
 
 
-
-
 Route::get('/administration', Board::class);
+
+
+Route::get('/checkout', function() {
+	return view('livewire/checkout');
+});

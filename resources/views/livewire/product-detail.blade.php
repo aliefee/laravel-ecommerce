@@ -13,15 +13,19 @@
 	            <hr class="my-3">
 	            <div class="mt-2">
 	                <label class="text-gray-700 text-sm" for="count">Count:</label>
-	                <div class="flex items-center mt-1">
-	                    <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+
+
+	                <div x-data="{ count : 1 }" class="flex items-center mt-1">
+	                    <button x-on:click="count++" class="text-gray-500 focus:outline-none focus:text-gray-600">
 	                        <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
 	                    </button>
-	                    <span class="text-gray-700 text-lg mx-2">1</span>
-	                    <button class="text-gray-500 focus:outline-none focus:text-gray-600">
+	                    <span x-text="count" class="text-gray-700 text-lg mx-2"></span>
+	                    <button x-on:click="count--" class="text-gray-500 focus:outline-none focus:text-gray-600">
 	                        <svg class="h-5 w-5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
 	                    </button>
 	                </div>
+
+
 	            </div>
 	           
 	            <div class="flex items-center mt-6">
