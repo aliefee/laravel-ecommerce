@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\SearchController;
 use App\Http\Livewire\Admin\Board;
 
 /*
@@ -16,7 +18,7 @@ use App\Http\Livewire\Admin\Board;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.show-home');
 });
 
 Route::get('/product/{product}', [ProductController::class, 'show']);
@@ -25,6 +27,12 @@ Route::get('/product/{product}', [ProductController::class, 'show']);
 Route::get('/administration', Board::class);
 
 
-Route::get('/checkout', function() {
-	return view('livewire/checkout');
+Route::get('/checkout', [CheckoutController::class, 'orderCartItems']);
+
+
+Route::get('/q', [SearchController::class, 'index']);
+
+
+Route::get('/successful-payment', function () {
+	return view('livewire.payment-success');
 });

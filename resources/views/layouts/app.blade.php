@@ -6,7 +6,7 @@
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<title>Laravel</title>
 
-	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
 
 	<style>
 		[x-cloak] {
@@ -14,14 +14,13 @@
     	}
 	</style>
 
-
    	@livewireStyles
 </head>
 <body>
+	
 	{{ $slot ?? '' }}
 
-	@include('livewire/cart')
-
 	@livewireScripts
+	
 </body>
 </html>

@@ -1,7 +1,7 @@
 <div>
 
-
-	<div class="py-12">
+<div class="flex flex-col h-screen">
+	<div class="flex-grow py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         	<h1 class="text-4xl font-bold text-center">
             	Admin Board
@@ -55,6 +55,9 @@
 
 	    </div>
     </div>
+	</div>
 
+@livewire('footer')
+</div>
 
 </div>

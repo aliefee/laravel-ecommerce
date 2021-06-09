@@ -10,8 +10,8 @@
 # laravel-ecommerce
 
 ### Requirements
--Laravel 8
--Tailwindcss
+-Laravel 8  
+-Tailwindcss  
 
 
 
