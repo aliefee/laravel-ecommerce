@@ -10,11 +10,11 @@ class Board extends Component
 {
     use WithFileUploads;
     public $image, $photo;
-	public $products, $name, $price, $description, $product_id;
+	public $products, $name, $price, $description, $quantity, $product_id;
     public $isModalOpen = 0;
 
     public function render()
-    {	
+    {
     	$this->products = Product::all();
         return view('livewire.admin.board');
     }
@@ -39,6 +39,7 @@ class Board extends Component
         $this->name = '';
         $this->price = '';
         $this->description = '';
+        $this->quantity = 0;
         $this->product_id = 0;
         $this->image = '';
         $this->photo = null;
@@ -52,6 +53,7 @@ class Board extends Component
             'price' => 'required',
             'description' => 'required',
             'photo' => 'nullable|image|max:1024',
+            'quantity' => 'required|integer'
         ]);
 
         if ($this->photo != null) {
@@ -66,6 +68,7 @@ class Board extends Component
             'name' => $this->name,
             'price' => $this->price,
             'description' => $this->description,
+            'quantity' => $this->quantity,
             'image' => $image,
         ]);
 
@@ -83,6 +86,7 @@ class Board extends Component
         $this->name = $product->name;
         $this->price = $product->price;
         $this->description = $product->description;
+        $this->quantity = $product->quantity;
         $this->image = $product->image;
 
         $this->openModalPopover();

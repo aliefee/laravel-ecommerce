@@ -9,9 +9,10 @@ class Product extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'description', 'price', 'image'
+        'name', 'description', 'price', 'image', 'quantity'
     ];
     protected $attributes = [
         'image' => 'storage/products/product-default.png',
+        'quantity' => 100,  # development!!
     ];
 }

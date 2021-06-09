@@ -29,7 +29,7 @@
 	                	<th class="text-left p-3 px-5">Image</th>
 	                    <th class="text-left p-3 px-5">Name</th>
 	                    <th class="text-left p-3 px-5">Price</th>
-	                    <th class="text-left p-3 px-5">Status</th>
+	                    <th class="text-left p-3 px-5">Quantity</th>
 	                    <th></th>
 	                </tr>
 	                @foreach($products as $product)
@@ -39,13 +39,12 @@
 		                			<img class="object-left object-contain h-20 rounded-md " src="{{ $product->image }}" alt="Item Image">
 		                		</a>
 		                	</td>
-		                    <td class="p-3 px-5"><input type="text" value="{{ $product->name }}" class="bg-transparent"></td>
-		                    <td class="p-3 px-5"><input type="text" value="{{ $product->price }}" class="bg-transparent"></td>
 		                    <td class="p-3 px-5">
-		                        <select value="user.role" class="bg-transparent">
-		                            <option value="user">available</option>
-		                            <option value="admin">non-available</option>
-		                        </select>
+		                    	<input type="text" value="{{ $product->name }}" class="bg-transparent"></td>
+		                    <td class="p-3 px-5">
+		                    	<input type="text" value="${{ $product->price }}" class="bg-transparent text-green-900"></td>
+		                    <td class="p-3 px-5">
+		                        <input type="text" value="{{ $product->quantity }}" class="bg-transparent">
 		                    </td>
 		                    <td class="p-3 px-5 flex-end justify-end"><button wire:click="edit({{ $product->id }})" type="button" class="mr-3 text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Edit</button><button wire:click="delete({{ $product->id }})" type="button" class="text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Delete</button></td>
 	                	</tr>

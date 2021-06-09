@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\SearchController;
 use App\Http\Livewire\Admin\Board;
+use App\Http\Livewire\Admin\Orders;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,8 @@ Route::get('/', function () {
 Route::get('/product/{product}', [ProductController::class, 'show']);
 
 
-Route::get('/administration', Board::class);
+Route::get('/admin-board', Board::class);
+Route::get('/admin-orders', Orders::class);
 
 
 Route::get('/checkout', [CheckoutController::class, 'orderCartItems']);

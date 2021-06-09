@@ -16,7 +16,7 @@
 	            	Success Payment
 	    </h1>
 	</div>
-	<div class="pt-4 flex justify-center">
+	<div class="pt-4 pl-6 flex justify-center">
 		Your Payment was Successful. You can continue shopping!
 	</div>
 </div>
