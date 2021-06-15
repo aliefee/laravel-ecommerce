@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Order;
+use App\Models\Product;
 
 class Checkout extends Component
 {
@@ -90,6 +91,10 @@ class Checkout extends Component
         $order->cart = $this->cart;
 
         $order->save();
+
+        foreach($this->cart as $item) {
+            Product::find($item['id'])->decrement('quantity',$item['count']);
+        }
 
         session()->forget('cart');
 
