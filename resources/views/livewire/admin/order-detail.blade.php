@@ -21,18 +21,24 @@
 						<div class="flex justify-between mt-6">
 							<div class="flex">
 								<img class="h-20 w-20 object-cover rounded" src="{{ '/'.$item['image'] ?? 'defaultimage' }}" alt="">
-								<div class="mx-3">
-									<h3 class="text-sm text-gray-600">{{ $item['name'] ?? 'defaultname' }}</h3>
-									<div class="flex items-center mt-2">
-										<span class="text-gray-700 ">Count: {{ $item['count'] }}</span>
-									</div>
+								<div class="mx-3 mt-5">
+									<h3 class="text-lg text-gray-600">{{ $item['name'] ?? 'defaultname' }}</h3>
 								</div>
 							</div>
-							<span class="text-gray-600">${{ $item['price'] ?? 'defaultprice' }}</span>
+							<div class="flex justiy-end">
+								<span class="text-gray-600">{{ $item['count'] ?? 'defaultprice' }}x&nbsp</span>
+								<span class="text-blue-600">${{ $item['price'] ?? 'defaultprice' }}</span>
+							</div>
 						</div>
 					@endforeach
 
-					<hr class="my-3">
+						<hr class="my-3">
+						<div class="flex flex-col mt-6">
+							<span class="text-gray-900">Name: {{ $u_name ?? 'defaultaddress' }}</span>
+							<span class="text-gray-900">Surname: {{ $u_surname ?? 'defaultaddress' }}</span>
+							<span class="text-gray-900">Delivery address: {{ $address ?? 'defaultaddress' }}</span>
+							<span class="text-gray-900">Postal Code: {{ $postal ?? 'defaultaddress' }}</span>
+						</div>
 						<div class="flex justify-center mt-6">
 							<button type="button" wire:click="closeModalPopover()" class="border-2 border-gray-500 rounded-full font-bold text-gray-500 px-4 py-3 transition duration-300 ease-in-out hover:bg-gray-500 hover:text-white mr-6">
     						Close

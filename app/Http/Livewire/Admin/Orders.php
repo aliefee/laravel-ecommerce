@@ -9,7 +9,7 @@ use App\Models\Product;
 class Orders extends Component
 {
 	public $orders;
-	public $cart;
+	public $cart, $address, $postal, $u_name, $u_surname;
 	public $isModalOpen = 0;
 
     public function render()
@@ -34,6 +34,10 @@ class Orders extends Component
     {
     	$order = Order::findOrFail($id);
     	$this->cart = $order->cart;
+        $this->address = $order->u_address;
+        $this->postal = $order->u_postal;
+        $this->u_name = $order->u_name;
+        $this->u_surname = $order->u_surname;
     	$this->openModalPopover();
     }
 
